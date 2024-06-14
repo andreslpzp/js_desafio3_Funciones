@@ -4,5 +4,14 @@ function pintar(elemento, color){
 
     const ele = document.getElementById("ele1")
 
-    ele.style.backgroundColor = 'green';
-    ele.addEventListener("click", function(){pintar(ele, 'yellow')})
+    let clickCount = 0;
+
+    ele.addEventListener("click", function() {
+        clickCount++;
+        if (clickCount === 1) {
+            pintar(ele, 'green');
+        } else if (clickCount === 2) {
+            pintar(ele, 'yellow');
+            clickCount = 0;
+        }
+    });

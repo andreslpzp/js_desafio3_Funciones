@@ -19,32 +19,28 @@ document.addEventListener('keypress', function (event) {
             keyElement.textContent = `Background color: ${color}`;
             break;
         case 'q':
-            color = 'purple';
-            createOrUpdateKey2(color);
+            createNewDiv('purple');
             break;
         case 'w':
-            color = 'grey';
-            createOrUpdateKey2(color);
+            createNewDiv('grey');
             break;
         case 'e':
-            color = 'brown';
-            createOrUpdateKey2(color);
+            createNewDiv('brown');
             break;
         default:
             color = null;
     }
 });
 
-function createOrUpdateKey2(color) {
-    let key2Element = document.getElementById('key2');
-    if (!key2Element) {
-        key2Element = document.createElement('div');
-        key2Element.id = 'key2';
-        document.body.appendChild(key2Element);
-    }
-    key2Element.style.backgroundColor = color;
-    key2Element.textContent = `Background color: ${color}`;
+function createNewDiv(color) {
+    const newDiv = document.createElement('div');
+    newDiv.style.width = '200px';
+    newDiv.style.height = '200px';
+    newDiv.style.backgroundColor = color;
+    newDiv.style.border = '4px solid black';
+    newDiv.style.margin = '10px';
+    newDiv.textContent = `Background color: ${color}`;
+    document.body.appendChild(newDiv);
 }
-
 
 
